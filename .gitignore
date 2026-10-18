@@ -1,0 +1,25 @@
+# Python och virtuell miljö
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Testresultat och cache
+.pytest_cache/
+.coverage
+htmlcov/
+
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+
+# Miljövariabler och hemligheter
+.env.idea/
+__pycache__
+.venv/
+.venv_old/
+# macOS
+.DS_Store
