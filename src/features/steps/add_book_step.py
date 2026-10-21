@@ -1,14 +1,20 @@
-from behave import then
+from behave import when, then
 from playwright.sync_api import expect
 
 
-@then("Vill jag kunna lägga till en bok som saknas i listan")
+@then(u'Ser boklistan och möjlighet Lägg till bok')
 def step_add_book(context):
+    page = context.base_page.page
+    expect(page.get_by_role("button", name="Lägg till bok")).to_be_visible()
+
+
+@when(u'Saknar en bok i listan som visas')
+def step_add_book_button(context):
     page = context.base_page.page
     page.get_by_role("button", name="Lägg till bok").click()
 
 
-@then("Registrera och spara titel och författare")
+@when(u'lägger till en bok som saknas i listan')
 def step_add_book_details(context):
     page = context.base_page.page
 
@@ -18,7 +24,7 @@ def step_add_book_details(context):
     page.get_by_role("button", name="Lägg till ny bok").click()
 
 
-@then("Se boken i boklistan")
+@then(u'vill jag se den tillagda boken i boklistan')
 def step_view_book(context):
     page = context.base_page.page
     page.get_by_role("button", name="Katalog").click()

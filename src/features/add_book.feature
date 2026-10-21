@@ -4,12 +4,12 @@ Feature: Lägg till bok
 
         Given Att jag som användare 
         When Går in på websidan 
-        Then Vill jag kunna lägga till en bok som saknas i listan
+        Then Ser boklistan och möjlighet Lägg till bok
    
     Scenario: Registrera boktitel och författare
 
         Given Att jag som användare 
         When Går in på websidan 
-        Then Vill jag kunna lägga till en bok som saknas i listan
-        Then Registrera och spara titel och författare
-        Then Se boken i boklistan
+        When Saknar en bok i listan som visas
+        And lägger till en bok som saknas i listan
+        Then vill jag se den tillagda boken i boklistan
