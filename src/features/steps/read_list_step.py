@@ -1,5 +1,6 @@
 from behave import given, when, then
 from playwright.sync_api import expect
+from src.features.pages.base_page import BasePage
 
 
 @given("Att jag som användare")
@@ -9,9 +10,8 @@ def step_user(context):
 
 @when("Går in på websidan")
 def step_open_website(context):
-    context.base_page.open(
-        "https://tap-ht25-testverktyg.github.io/exam/"
-    )
+    context.base_page = BasePage(context.page)
+    context.base_page.open()
 
 
 @then("Vill jag kunna se lista över böcker")
