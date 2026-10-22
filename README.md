@@ -18,3 +18,5 @@ Innan PR har jag också kontrollerat:
 python -m flake8 src tests
 python -m pytest --maxfail=1 --disable-warnings -q
 python -m playwright install chromium
+
+Jag siktar på G
